@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  node-app:
+    build:
+      context: .
+      dockerfile: docker/node-app.dockerfile
+    restart: always
+    environment:
+      TZ: Asia/Seoul
+      TESTSTRING: test string with docker-compose
