@@ -8,7 +8,7 @@ console.log('config')
 console.table(config)
 
 const save = async () => {
-  const [date, h, m] = getLocalISOTime()
+  const [date, h, m, s] = getLocalISOTime()
 
   const displays = await screenshot.listDisplays()
 
@@ -16,7 +16,7 @@ const save = async () => {
     const dirPath = path.join(config.path, date, `${index}`)
     mkdir(dirPath)
 
-    const imgpath = path.join(dirPath, `${h}_${m}.png`)
+    const imgpath = path.join(dirPath, `${h}_${m}_${s}.png`)
     const res = await screenshot({ screen: display.id, filename: imgpath })
     console.log(res)
   })

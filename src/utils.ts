@@ -6,7 +6,7 @@ export const getLocalISOTime = () => {
     .toISOString()
     .slice(0, -1)
 
-  return localISOTime.split(/T|:/)
+  return localISOTime.split(/T|:|\./)
 }
 
 export const mkdir = (path: string) => {
